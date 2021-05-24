@@ -1,0 +1,142 @@
+@media screen and (max-width: 1500px){
+    .conteudo_busca h2 {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .conteudo_busca {
+        width: 80%;
+    }
+    .item_lojas_proximas {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1010px){
+    .conteudo_resultado {
+        grid-template-columns: 70% 30%;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .conteudo_busca h2 {
+        font-size: 3.5em;
+    }
+
+    .busca_mapa {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .resultado .container {
+        width: 100vw;
+    }
+    .conteudo_resultado {
+        grid-template-columns: 1fr;
+        grid-gap: 2em;
+    }
+    .txt_resultado {
+        width: 90vw;
+        margin: 0 auto;
+    }
+    .conteudo_resultado img {
+        width: 100vw;
+    }
+
+    .item_lojas_proximas {
+        width: 100%;
+    }
+
+    .menu_footer {
+        grid-auto-flow: row;
+        width: 50%;
+    }
+    .newsletter_footer {
+        justify-self: start;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    header .container {
+        width: 95vw;
+    }
+    .pre_header, .menu01 {
+        display: none;
+    }
+    .menu_mobile {
+        display: block;
+    }
+
+    .lojas_proximas .container {
+        width: 95vw;
+    }
+    .cta_lojas_proximas {
+        display: none;
+    }
+
+    .social_footer, .signature {
+        grid-auto-flow: row;
+    }
+    .social_footer ul, .social_footer a, .signature ul, .copy {
+        justify-self: center;
+        margin: 1em 0;
+    }
+    .signature ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .copy {
+        font-size: .9em;
+    }
+}
+
+@media screen and (max-width: 500px){
+    main {
+        padding-top: 2em;
+    }
+    .cabecalho img {
+        width: 180px;
+    }
+
+    .conteudo_busca {
+        width: 90%;
+    }
+    .conteudo_busca h2 {
+        font-size: 2.5em;
+    }
+    .conteudo_busca input, .conteudo_busca button {
+        width: 100%;
+        margin-bottom: 2em;
+    }
+    .conteudo_busca a {
+        text-align: center;
+    }
+
+    .endereco_resultado p {
+        width: 50%;
+    }
+
+    .item_funcionamento {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .item_lojas_proximas {
+        height: 120px;
+    }
+    .item_lojas_proximas img {
+        width: 90px;
+    }
+    .item_lojas_proximas h4 {
+        font-size: 1em;
+    }
+    .txt_lojas_proximas .avaliacoes {
+        margin: .5em 0;
+    }
+    .item_lojas_proximas p {
+        font-size: .8em;
+    }
+}

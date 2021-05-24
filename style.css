@@ -1,0 +1,534 @@
+/*
+Theme Name: Desafio Técnico Empresta 
+Author: Rapha Mafforte
+Description: Tema em HTML e CSS desenvolvido para o desafio técnico referente à vaga de Web Designer da Empresta 
+Version: 1.0
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 80vw;
+    margin: 0 auto;
+}
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+input {
+    border: none;
+    border-radius: 5px;
+    padding-left: 1em;
+}
+
+header {
+    width: 100vw;
+    background: #fff;
+    position: fixed;
+    box-shadow: 0 0 10px 0 rgba(54,68,75,.3);
+    margin-bottom: 4em;
+}
+main {
+    padding-top: 7.5em;
+}
+
+.btn_laranja {
+    background: #EF6C00;
+    color: #fff;
+    transition: all .3s;
+}
+.btn_laranja:hover {
+    background: none;
+    border: solid 1px #EF6C00;
+    color: #EF6C00
+}
+
+/************************** PRE HEADER **************************/
+
+.pre_header {
+    border-bottom: 1px solid #E3E3E3;
+    padding: .5em 0 .7em 0;
+}
+.conteudo_pre_header {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+}
+.menu_pre_header {
+    display: flex;
+    margin-right: 2em;
+}
+.menu_pre_header a {
+    font-size: .8em;
+    color: #5f5e5e;
+    margin: 0 1em;
+    transition: color .3s;
+}
+.menu_pre_header a:hover {
+    color: #ef6c00;
+}
+.menu_pre_header a.border {
+    border: solid 1px #ef6c00;
+    border-radius: 5px;
+    color: #ef6c00;
+    padding: .3em .5em;
+    transition: all .3s;
+}
+.menu_pre_header a.border:hover {
+    background-color: #ef6c00;
+    color: #fff;
+}
+.social {
+    display: grid;
+    grid-auto-flow: column;
+}
+.social li {
+    align-self: center;
+    margin: 0 .2em;
+}
+.social li i {
+    color: #5f5e5e;
+    transition: color .3s;
+}
+.social li:hover i {
+    color: #ef6c00;
+}
+
+/************************** CABEÇALHO **************************/
+
+.cabecalho {
+    display: grid;
+    grid-auto-flow: column;
+    background: #fff;
+    padding: .7em 0;
+}
+.cabecalho img {
+    width: 240px;
+}
+.menu01 {
+    display: flex;
+    align-self: center;
+    justify-self: end;
+}
+
+.menu01 a {
+    color: #5f5e5e;
+    margin: 0 0 0 1em;
+    transition: all .3s;
+}
+.menu01 a:hover {
+    color: #273e74;
+}
+.submenu {
+    display: none;
+}
+
+/************************** MENU MOBILE **************************/
+
+.menu_mobile {
+    display: none;
+}
+#menu_toggle {
+    opacity: 0;
+}
+#menu_toggle:checked ~ .menu_btn > span {
+    transform: rotate(45deg);
+}
+#menu_toggle:checked ~ .menu_btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+#menu_toggle:checked ~ .menu_btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+#menu_toggle:checked ~ .menu_box {
+    visibility: visible;
+    left: 0;
+}
+.menu_btn {
+    display: grid;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+.menu_btn > span,
+.menu_btn > span::before,
+.menu_btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+    transition-duration: .3s;
+}
+.menu_btn > span::before {
+    content: '';
+    top: -8px;
+  }
+.menu_btn > span::after {
+    content: '';
+    top: 8px;
+}
+.menu_box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding-bottom: 5em;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition-duration: .25s;
+}
+.menu_box li {
+    border-top: solid 1px rgba(0,0,0,.1);
+}
+.menu_box a {
+    display: block;
+    padding: 1.3em 2em;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    transition-duration: .25s;
+}
+.menu_box a:hover {
+    background-color: #CFD8DC;
+    color: #ef6c00;
+}
+
+/************************** BUSCA/MAPA **************************/
+
+.busca_mapa {
+    width:100vw;
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+.busca {
+    background: linear-gradient(145deg, #51a0e9, #093c88);
+}
+.conteudo_busca {
+    display: grid;
+    grid-auto-flow: row;
+    align-content: center;
+    width: 65%;
+    height: 80vh;
+    margin: 0 auto;
+}
+.conteudo_busca h2 {
+    font-size: 4.5em;
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Noto Sans', sans-serif;
+    letter-spacing: 1.08px;
+}
+.conteudo_busca input {
+    width: 75%;
+    height: 60px;
+    margin: 4em 1em 4em 0;
+}
+.conteudo_busca input::placeholder {
+    font-size: 1.1em;
+    color: #8894b0;
+    font-family: 'Roboto', sans-serif;
+}
+.conteudo_busca button {
+    width: 20%;
+    height: 60px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+.conteudo_busca a {
+    color: #fff;
+    display: block;
+}
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+/************************** RESULTADO **************************/
+
+.resultado {
+    background: url('./assets/img/detalhe-bg01.svg') no-repeat;
+    background-position: 1em 4em;
+}
+.conteudo_resultado {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 4em 0;
+}
+.conteudo_resultado h3 {
+    color:#002E6E;
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.avaliacoes {
+    display: flex;
+}
+.estrelas input[type=radio] {
+    display: none;
+}
+.estrelas label i.fa:before {
+    content:'\f005';
+    color: #ef6c00;
+}
+.estrelas input[type=radio]:checked ~ label i.fa:before {
+    color: #CCC;
+}
+.avaliacoes span {
+    margin-left: .3em;
+    font-size: .8em;
+}
+
+.conteudo_resultado h2 {
+    font-size: 3em;
+    font-weight: 900;
+    color: #ef6c00;
+    width: 80%;
+}
+
+.info_resultado {
+    align-self: center;
+}
+.info_resultado p {
+    margin: 2em 0;
+}
+
+.endereco_resultado p {
+    font-weight: 500;
+    width: 35%;
+    line-height: 1.3em;
+    background: url('./assets/img/map-marker.svg') no-repeat;
+    background-size: 1.2em;
+    background-position: 0 50%;
+    padding-left: 1.5em;
+}
+.telefone_resultado p {
+    background: url('./assets/img/phone-call.svg') no-repeat;
+    background-size: 1.2em;
+    background-position: 0 .3em;
+    padding: .5em 0 0 1.5em;
+}
+.funcionamento_resultado {
+    background: url('./assets/img/map-marker.svg') no-repeat;
+    background-size: 1.2em;
+    background-position: 0 0;
+    padding-left: 1.5em;
+}
+
+.item_funcionamento {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
+    margin: .7em 0;
+}
+.contato_resultado {
+    display: flex;
+    margin-top: 2em;
+}
+.cta {
+    border-radius: 5px;
+    width: 170px;
+    height: 40px;
+    font-size: .9em;
+    color: #fff;
+}
+.cta_tel {
+    background: #ef6c00;
+}
+.cta_wtspp {
+    background: #00D46C;
+    margin-left: 1em;
+}
+
+.img_resultado {
+    justify-self: center;
+    align-self: center;
+}
+
+
+/************************** LOJAS PRÓXIMAS **************************/
+
+.lojas_proximas {
+    background: url('./assets/img/detalhe-bg01.svg') no-repeat #EFF2FA;
+    background-position: 98% 2em;
+    padding: 4em 0;
+}
+.conteudo_lojas_proximas h3 {
+    font-size: 2em;
+    margin-bottom: 2em;
+    line-height: 1.5em;
+}
+.conteudo_lojas_proximas h3 strong {
+    font-weight: 700;
+}
+
+.item_lojas_proximas {
+    display: grid;
+    grid-auto-flow: column;
+    border-radius: 10px;
+    background: #fff;
+    width: 60%;
+    height: 160px;
+    margin: 1em 0;
+    box-shadow: 0 3px 10px #e3e3e3;
+}
+.item_lojas_proximas img {
+    width: 160px;
+    height: 100%;
+    object-fit: cover;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.txt_lojas_proximas {
+    align-self: center;
+    justify-self: start;
+}
+.txt_lojas_proximas h4 {
+    font-size: 1.3em;
+    color: #213565;
+    font-weight: 700;
+}
+.txt_lojas_proximas .avaliacoes {
+    margin: .5em 0 1em 0;
+}
+.info_item_lojas_proximas p {
+    line-height: 1.4em;
+    font-size: .9em;
+}
+.info_item_lojas_proximas p strong {
+    font-weight: 700;
+}
+
+.cta_lojas_proximas {
+    align-self: end;
+    justify-self: end;
+    margin: 0 2em 2em 0;
+}
+
+
+footer {
+    background: linear-gradient(200deg, #4A4A4A 0%, #363636 56%, #2E2E2E 100%);
+}
+.conteudo_footer {
+    padding: 4em 0 2em 0;
+}
+.menu_footer {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 2em;
+}
+.menu_footer h3 {
+    font-size: 1.5em;
+    text-align: left;
+    color:#EF6C00;
+    padding-bottom: 1em;
+    border-bottom: solid 1px #EF6C00;
+}
+.menu_footer ul {
+    margin-top: 1.5em;
+}
+.menu_footer li {
+    margin: .8em 0;
+}
+.menu_footer a {
+    color: #fff;
+    margin: 1em 0;
+    transition: color .3s;
+}
+.menu_footer a:hover {
+    color: #EF6C00;
+}
+
+.atendimento_footer .border a {
+    border: solid 1px #fff;
+    border-radius: 5px;
+    width: 130px;
+    padding: .5em;
+    text-align: center;
+    display: block;
+    transition: all .3s;
+}
+.atendimento_footer .border a:hover {
+    border: solid 1px #EF6C00;
+    background: #EF6C00;
+    color: #fff;
+}
+
+.newsletter_footer {
+    justify-self: end;
+    width: 80%;
+}
+.newsletter_footer form {
+    display: grid;
+    margin-top: 1.5em;
+}
+.newsletter_footer input {
+    height: 36px;
+    margin: .5em 0;
+}
+.newsletter_footer button {
+    justify-self: end;
+    font-size: 1em;
+}
+
+
+.social_footer {
+    display: grid;
+    grid-auto-flow: column;
+    padding: 2em 0;
+    align-items: center;
+}
+.social_footer ul {
+    display: flex;
+}
+.social_footer li i {
+    color: #fff;
+    transition: color .3s;
+    font-size: 1.5em;
+}
+.social_footer li:hover i {
+    color: #EF6C00;
+}
+.social_footer a {
+    justify-self: end;
+}
+
+.signature {
+    display: grid;
+    grid-auto-flow: column;
+    border-top: solid 1px #414141;
+    padding-top: 2em;
+}
+.signature ul {
+    display: flex;
+}
+.signature img {
+    max-height: 40px;
+}
+.copy {
+    justify-self: end;
+    color: #fff;
+    font-size: .8em;
+    background: url('./assets/img/icone-empresta.svg') no-repeat;
+    background-size: 1.5em;
+    padding: .1em 0 0 2em
+}
